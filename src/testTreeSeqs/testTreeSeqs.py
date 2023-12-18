@@ -18,7 +18,7 @@ if args.seed:
 seeds = [random.randint(0, 1000000)]
 
 
-print(args.s)
+print(seeds)
 
 def makeSim():
     ts = msprime.sim_ancestry(
