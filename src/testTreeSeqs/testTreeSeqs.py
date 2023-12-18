@@ -32,11 +32,11 @@ if args.out:
 else:
     pref="ts"
 
-
 if args.chromosome_length:
     ll=args.chromosome_length
 else:
     ll=50_000
+
 
 print(seeds)
 
@@ -94,7 +94,6 @@ with open(pref + ".vcf", "w") as f:
 
 # Swapping alleles###########################
 print("Swapping (some) alleles...")
-import swapAlleles
 
 # p is the probability of swap
 swapAlleles.swapVCF(pref, p)
