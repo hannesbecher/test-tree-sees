@@ -1,4 +1,4 @@
-
+import random
 
 def swapDipCall(gt):
     if gt == "0|1": return "1|0"
