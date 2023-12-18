@@ -37,12 +37,13 @@ if args.chromosome_length:
 else:
     ll=50_000
 
+nInd=10 # diploids
 
 print(seeds)
 
 def makeSim(clen):
     ts = msprime.sim_ancestry(
-        samples=10,
+        samples=nInd,
         recombination_rate=9.26e-09,
         sequence_length=clen,
         population_size=1_000,
@@ -97,6 +98,13 @@ print("Swapping (some) alleles...")
 
 # p is the probability of swap
 swapVCF(pref, p)
+
+# make metadata file #######################
+with open("SampleMetaData.csv", "w") as f:
+    f.write("ID,Pop,SubPop,Time\n")
+    for i in range(nInd):
+        f.write("Ind%03d,P1,P11,0\n" % i)
+
 
 print("All done.")
 
