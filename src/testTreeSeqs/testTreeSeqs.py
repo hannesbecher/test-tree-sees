@@ -15,7 +15,7 @@ args = parser.parse_args()
 if args.seed:
     random.seed(args.seed)
     
-seeds = [random.randint(0, 1000000)]
+seeds = [random.randint(0, 1000000) for i in range(10)]
 
 
 print(seeds)
