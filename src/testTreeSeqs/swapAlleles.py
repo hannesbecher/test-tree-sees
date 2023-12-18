@@ -9,7 +9,7 @@ def swapDipCall(gt):
 def swapCalls(ln, p):
     fields=ln[:-1].split("\t")
     gts = [swapDipCall(i) for i in fields[9:]]
-    return "\t".join(fields[:9] + gts) + "\t"
+    return "\t".join(fields[:9] + gts) + "\n"
     
 def swapVCF(prefix, p):
     with open(prefix + ".vcf", "r") as f:

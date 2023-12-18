@@ -57,14 +57,15 @@ def makeSim(clen):
     
     return ts
 
-
+print("Simulating tree seq...")
 ts = makeSim(ll)
 
+print("Writing VCF...")
 # Write results ###########################
 with open(pref + ".vcf", "w") as f:
     ts.write_vcf(f)
 
-print("Going to swap alleles...")
+print("Swapping (some) alleles...")
 import swapAlleles
 
 swapAlleles.swapVCF(pref, p)
