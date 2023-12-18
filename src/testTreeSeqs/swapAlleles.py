@@ -15,7 +15,8 @@ def swapVCF(prefix, p):
     with open(prefix + ".vcf", "r") as f:
         with open(prefix + "_swapped.vcf", "w") as o:
             for line in f:
-                if line.startswith("#"):
+                if random.random() > p or line.startswith("#"):
                     o.write(line)
                 else:
                     o.write(swapCalls(line, p))
+                    
