@@ -41,5 +41,5 @@ def makeSim():
 ts = makeSim()
 
 # Write results ###########################
-with open("ts.vcf", "w"):
-    ts.write_vcf("ts.vcf")
+with open("ts.vcf", "w") as f:
+    ts.write_vcf(f)
