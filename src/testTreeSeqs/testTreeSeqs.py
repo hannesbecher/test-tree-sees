@@ -8,15 +8,28 @@ parser = argparse.ArgumentParser(
                     epilog='Thanks for using testTreeSeqs!')
 
 parser.add_argument("-s", "--seed", type=int, help="master random seed") # random seed
+parser.add_argument("-o", "--out", type=str, help="output prefix")
+parser.add_argument("-p", "--prob", type=str, help="swap prob")
 
 args = parser.parse_args()
 
+
+
+if args.prob:
+    p=args.prob
+else:
+    p=0.01
 
 if args.seed:
     random.seed(args.seed)
     
 seeds = [random.randint(0, 1000000) for i in range(10)]
 
+
+if args.pref:
+    pref=args.pref
+else:
+    pref="ts"
 
 print(seeds)
 
@@ -41,5 +54,13 @@ def makeSim():
 ts = makeSim()
 
 # Write results ###########################
-with open("ts.vcf", "w") as f:
+with open(pref + ".vcf", "w") as f:
     ts.write_vcf(f)
+
+print("Going to swap alleles...")
+import swapAlleles
+
+swapAlleles.swapVCF(o, p)
+
+print("All done.")
+
