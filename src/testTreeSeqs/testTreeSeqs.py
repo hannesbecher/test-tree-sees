@@ -1,5 +1,6 @@
 
 import msprime
+import random
 
 def makeSim(clen, nInd, seeds):
     ts = msprime.sim_ancestry(
