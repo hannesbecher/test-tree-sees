@@ -103,7 +103,7 @@ swapVCF(pref, p)
 with open("SampleMetaData.csv", "w") as f:
     f.write("ID,Pop,SubPop,Time\n")
     for i in range(nInd):
-        f.write("Ind%03d,P1,P11,0\n" % i)
+        f.write("tsk_%d,P1,P11,0\n" % i)
 
 
 print("All done.")
