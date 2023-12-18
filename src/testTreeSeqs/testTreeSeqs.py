@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-s", "--seed") # random seed
 
 
-
+parser.parse_args()
 
 def makeSim():
     ts = msprime.sim_ancestry(
