@@ -45,7 +45,7 @@ print(seeds)
 
 # Running the simulation ######################
 print("Simulating tree seq...")
-ts = testTreeSeqs.makeSim(ll, nInd)
+ts = testTreeSeqs.makeSim(ll, nInd, seeds)
 
 
 # Write results ###########################

@@ -1,7 +1,7 @@
 
 import msprime
 
-def makeSim(clen, nInd):
+def makeSim(clen, nInd, seeds):
     ts = msprime.sim_ancestry(
         samples=nInd,
         recombination_rate=9.26e-09,
