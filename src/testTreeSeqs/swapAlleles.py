@@ -13,7 +13,7 @@ def swapCalls(ln, p):
     
 def swapVCF(prefix, p):
     with open(prefix + ".vcf", "r") as f:
-        with open(prefix + "_swapped.vcf", "r") as o:
+        with open(prefix + "_swapped.vcf", "w") as o:
             for line in f:
                 if line.startswith("#"):
                     o.write(line)
