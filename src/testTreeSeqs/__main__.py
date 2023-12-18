@@ -21,6 +21,8 @@ args = parser.parse_args()
 #else:
 #    p=0.01
 
+p=args.prob
+
 if args.seed:
     random.seed(args.seed)
     
