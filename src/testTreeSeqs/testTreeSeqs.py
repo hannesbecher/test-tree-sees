@@ -26,8 +26,8 @@ if args.seed:
 seeds = [random.randint(0, 1000000) for i in range(10)]
 
 
-if args.pref:
-    pref=args.pref
+if args.out:
+    pref=args.out
 else:
     pref="ts"
 
