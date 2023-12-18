@@ -41,5 +41,4 @@ def makeSim():
 ts = makeSim()
 
 # Write results ###########################
-ts.write_vcf("tsHap.vcf", ploidy=1)
-ts.write_vcf("tsDip.vcf", ploidy=2)
+ts.write_vcf("ts.vcf")
