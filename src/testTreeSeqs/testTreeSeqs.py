@@ -10,6 +10,7 @@ parser = argparse.ArgumentParser(
 parser.add_argument("-s", "--seed", type=int, help="master random seed") # random seed
 parser.add_argument("-o", "--out", type=str, help="output prefix")
 parser.add_argument("-p", "--prob", type=str, help="swap prob")
+parser.add_argument("-l", "--chromosome_length", type=str, help="chromosome length")
 
 args = parser.parse_args()
 
@@ -31,13 +32,19 @@ if args.out:
 else:
     pref="ts"
 
+
+if args.chromosome_length:
+    ll=args.chromosome_length
+else:
+    ll=50_000
+
 print(seeds)
 
-def makeSim():
+def makeSim(clen):
     ts = msprime.sim_ancestry(
         samples=10,
         recombination_rate=9.26e-09,
-        sequence_length=50_000,
+        sequence_length=clen,
         population_size=1_000,
         random_seed=seeds[0]
         )
@@ -51,7 +58,7 @@ def makeSim():
     return ts
 
 
-ts = makeSim()
+ts = makeSim(ll)
 
 # Write results ###########################
 with open(pref + ".vcf", "w") as f:
