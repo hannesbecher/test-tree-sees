@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument("-s", "--seed", type=int, help="master random seed") # random seed
 parser.add_argument("-o", "--out", type=str, help="output prefix")
-parser.add_argument("-p", "--prob", type=float, help="probability of wrongly infrerred ancestral allele", default=0.01)
+parser.add_argument("-p", "--prob", type=float, help="probability of wrongly inferred ancestral allele, defaults to 0.01", default=0.01)
 parser.add_argument("-l", "--chromosome_length", type=str, help="chromosome length")
 
 args = parser.parse_args()
@@ -39,7 +39,7 @@ if args.chromosome_length:
 else:
     ll=50_000
 
-nInd=10 # diploids
+nInd=50 # diploids
 
 print(seeds)
 

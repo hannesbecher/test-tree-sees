@@ -1,5 +1,5 @@
 # test-tree-sees
-Generate tree sees for testing and demonstration
+Generate tree sequences for testing and demonstration
 
 # Dependencies
 A recent version of msprime.  
@@ -23,18 +23,23 @@ $ python -m testTreeSeqs -h
 ####   -h, --help            show this help message and exit
 ####   -s SEED, --seed SEED  master random seed
 ####   -o OUT, --out OUT     output prefix
-####   -p PROB, --prob PROB  probability of wrongly infrerred ancestral allele, defaults to 0.01
+####   -p PROB, --prob PROB  probability of wrongly inferred ancestral allele, defaults to 0.01
 ####   -l CHROMOSOME_LENGTH, --chromosome_length CHROMOSOME_LENGTH
 ####                         chromosome length
 #### 
 #### Thanks for using testTreeSeqs!
 
 # run as module
-python -m testTreeSeqs
+python -m testTreeSeqs -l 10000000 -p 0.01 # chromosome of 10M bp with 1% wrongly inferred ancestral alleles
 ```
 
 # Output
-Theer output files:
+Three output files:
 * `<prefix>.ts` The simulated tree sequence
 * `<prefix>.vcf` Corresponding VCF file
-* `<prefix>.ts` A VCF file with proportion `p` of sites with swapped allel state (to simulate wrong ancestral inference)
+* `<prefix>_swapped.vcf`  A VCF file with proportion `p` of sites with swapped allelic state (to simulate wrong ancestral inference)  
+
+Both VCF files can be used as input to the TS pipeline.
+
+# Simulation params
+... recombination and mutation rates are hard coded ATM in `testTreeSeqs.py` to match cattle.
