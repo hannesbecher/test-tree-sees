@@ -16,10 +16,10 @@ args = parser.parse_args()
 
 
 
-if args.prob:
-    p=args.prob
-else:
-    p=0.01
+#if args.prob:
+#    p=args.prob
+#else:
+#    p=0.01
 
 if args.seed:
     random.seed(args.seed)
