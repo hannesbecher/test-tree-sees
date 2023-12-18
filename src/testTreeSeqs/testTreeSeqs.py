@@ -96,7 +96,7 @@ with open(pref + ".vcf", "w") as f:
 print("Swapping (some) alleles...")
 
 # p is the probability of swap
-swapAlleles.swapVCF(pref, p)
+swapVCF(pref, p)
 
 print("All done.")
 
