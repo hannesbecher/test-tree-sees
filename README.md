@@ -13,7 +13,7 @@ git clone <this repo>
 # navigate to src folder
 cd test-tree-seqs/src
 
-# make sure the msprim package is available, e.g. run source activate treeStuff
+# make sure the msprime package is available, e.g. run source activate treeStuff
 
 # Check USAGE
 $ python -m testTreeSeqs -h
