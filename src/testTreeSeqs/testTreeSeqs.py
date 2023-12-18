@@ -60,7 +60,7 @@ with open(pref + ".vcf", "w") as f:
 print("Going to swap alleles...")
 import swapAlleles
 
-swapAlleles.swapVCF(out, p)
+swapAlleles.swapVCF(pref, p)
 
 print("All done.")
 
