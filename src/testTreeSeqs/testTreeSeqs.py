@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(
                     description='A package to generate test data for the HLab TS pipeline. Based on msprime.',
                     epilog='Thanks for using testTreeSeqs!')
 
-parser.add_argument("-s", "--seed", type=int, help="master random seed", action='store_const') # random seed
+parser.add_argument("-s", "--seed", type=int, help="master random seed") # random seed
 
 args = parser.parse_args()
 
