@@ -1,4 +1,4 @@
-# test-tree-sees
+# test-tree-seqs
 Generate tree sequences for testing and demonstration
 
 # Dependencies
