@@ -90,7 +90,7 @@ with open(pref + ".ts", "w") as f:
 
 print("Writing VCF...")
 with open(pref + ".vcf", "w") as f:
-    ts.write_vcf(f)
+    ts.write_vcf(f, contig_id='chr1')
 
 # Swapping alleles###########################
 print("Swapping (some) alleles...")
